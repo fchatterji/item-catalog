@@ -9,11 +9,11 @@ import { Category } from './category';
     <div><label>id: </label>{{category.id}}</div>
     <div>
       <label>name: </label>
-      <input [(ngModel)]="category.name" placeholder="name"/>
+      {{category.name}}
     </div>
   <ul class="items">
     <li *ngFor="let item of category.items">
-      <span class="badge">{{item.id}}</span> {{item.name}}
+      <my-item-detail [item]=item></my-item-detail>
   </ul>
   </div>
   `

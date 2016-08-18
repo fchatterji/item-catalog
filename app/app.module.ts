@@ -4,7 +4,7 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { CategoryDetailComponent } from './category-detail.component';
-
+import { ItemDetailComponent } from './item-detail.component';
 
 @NgModule({
   imports: [
@@ -13,7 +13,8 @@ import { CategoryDetailComponent } from './category-detail.component';
   ],
   declarations: [
     AppComponent,
-    CategoryDetailComponent
+    CategoryDetailComponent,
+    ItemDetailComponent
   ],
   bootstrap: [ AppComponent ]
 })

@@ -37,7 +37,7 @@ items: items1
 };
 
 const category2: Category = {
-id: 1,
+id: 2,
 name: 'animals',
 items: items2
 };
