@@ -1,48 +1,8 @@
 import { Component } from '@angular/core';
-import { Item } from './item';
 import { Category } from './category';
+import { CategoryService } from './category.service';
+import { OnInit } from '@angular/core';
 
-const item1: Item = {
-id: 1,
-name: 'Windstorm',
-description: 'a storm of winds'
-};
-
-const item2: Item = {
-id: 2,
-name: 'wristband',
-description: 'a band of wrists'
-};
-
-const item3: Item = {
-id: 3,
-name: 'dog',
-description: 'barks'
-};
-
-const item4: Item = {
-id: 4,
-name: 'cat',
-description: 'tries to bark'
-};
-
-const items1: Item[] = [item1, item2];
-const items2: Item[] = [item3, item4];
-
-
-const category1: Category = {
-id: 1,
-name: 'tools',
-items: items1
-};
-
-const category2: Category = {
-id: 2,
-name: 'animals',
-items: items2
-};
-
-const categories1: Category[] = [category1, category2];
 
 @Component({
   selector: 'my-app',
@@ -107,17 +67,26 @@ const categories1: Category[] = [category1, category2];
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-`]
+`],
+providers: [CategoryService]
 
 })
 
 export class AppComponent {
 
   title = 'Item catalog';
-
-  categories = categories1;
-
+  categories: Category[];
   selectedCategory: Category;
+
+  constructor(private categoryService: CategoryService) { }
+
+  getCategories() {
+    this.categoryService.getCategories().then(categories => this.categories = categories);
+  }
+
+  ngOnInit() {
+    this.getCategories();
+  }
 
   onSelect(category: Category) { this.selectedCategory = category; }
 }
