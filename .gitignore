@@ -20,16 +20,12 @@ venv/
 *.tar
 *.zip
 
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
 
 # angular #
 ######################
 node_modules/
 typings/
+*.log.*
 
 # typescript #
 ######################
