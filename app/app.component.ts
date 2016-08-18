@@ -1,16 +1,6 @@
 import { Component } from '@angular/core';
-
-export class Item {
-  id: number;
-  name: string;
-  description: string;
-}
-
-export class Category {
-  id: number;
-  name: string;
-  items: Item[];
-}
+import { Item } from './item';
+import { Category } from './category';
 
 const item1: Item = {
 id: 1,
@@ -66,19 +56,8 @@ const categories1: Category[] = [category1, category2];
         (click)="onSelect(category)">
       <span class="badge">{{category.id}}</span> {{category.name}}
   </ul>
-  
-  <div *ngIf="selectedCategory">
-    <h2>{{selectedCategory.name}} details!</h2>
-    <div><label>id: </label>{{selectedCategory.id}}</div>
-    <div>
-      <label>name: </label>
-      <input [(ngModel)]="selectedCategory.name" placeholder="name"/>
-    </div>
-  <ul class="items">
-    <li *ngFor="let item of selectedCategory.items">
-      <span class="badge">{{item.id}}</span> {{item.name}}
-  </ul>
-  </div>
+
+  <my-category-detail [category]="selectedCategory"></my-category-detail>
   `,
   styles: [`
   .selected {
