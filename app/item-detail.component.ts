@@ -8,24 +8,8 @@ import { Item } from './item';
 
 @Component({
   selector: 'my-item-detail',
-  template:`
-  <div>
-    <h2>{{item.name}}</h2>
-
-    <div>
-      <label>name: </label>
-      {{ item.name }}
-    </div>
-
-    <div>
-      <label>description: </label>
-      {{ item.description }}
-    </div>
-    
-    <button (click)="gotoCategories()">Back</button>
-
-  </div>
-  `
+  templateUrl: 'app/item-detail.component.html',
+  styleUrls: ['app/item-detail.component.css'],
 })
 export class ItemDetailComponent {
 

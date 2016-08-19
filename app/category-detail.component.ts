@@ -10,22 +10,8 @@ import { Item } from './item';
 
 @Component({
   selector: 'my-category-detail',
-  template:`
-  <div *ngIf="category">
-    <h2>{{category.name}} details</h2>
-	  <ul class="items">
-	    <li *ngFor="let item of category.items">
-        <button (click)="gotoDetail(item)">{{ item.name }} / {{ item.category_id }}</button>
-	    </li>
-    </ul>
-  </div>
-
-  <div *ngIf="!category">
-    <li *ngFor="let item of items" >
-      <button (click)="gotoDetail(item)">{{ item.name }} / {{ item.category_id }}</button>
-    </li>
-  </div>
-  `
+  templateUrl:'app/category-detail.component.html',
+  styleUrls: ['app/category-detail.component.css'],
 })
 export class CategoryDetailComponent implements OnInit {
   @Input()
@@ -48,4 +34,7 @@ export class CategoryDetailComponent implements OnInit {
   ngOnInit() {
     this.getItems();
   }
+
+  onSelect(item: Item) { 
+    this.router.navigate(['/hero', hero.id]);
 }
