@@ -26,6 +26,12 @@ export class CategoriesComponent implements OnInit {
     this.getCategories();
   }
 
-  onSelect(category: Category) { this.selectedCategory = category; }
+  onSelect(category: Category) { 
+    if (this.selectedCategory === category) {
+      this.selectedCategory = null;
+    } else {
+      this.selectedCategory = category; 
+    }
+  }
 
 }
