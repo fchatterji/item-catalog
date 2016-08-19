@@ -6,6 +6,8 @@ import { routing }       from './app.routing';
 import { AppComponent }  from './app.component';
 import { CategoriesComponent }  from './categories.component';
 import { CategoryService }  from './category.service';
+import { ItemService }  from './item.service';
+
 
 import { CategoryDetailComponent } from './category-detail.component';
 import { ItemDetailComponent } from './item-detail.component';
@@ -23,7 +25,8 @@ import { ItemDetailComponent } from './item-detail.component';
     ItemDetailComponent
   ],
   providers: [
-    CategoryService
+    CategoryService,
+    ItemService
   ],
   bootstrap: [ AppComponent ]
 })

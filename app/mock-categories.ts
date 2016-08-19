@@ -4,25 +4,29 @@ import { Category } from './category';
 const item1: Item = {
 id: 1,
 name: 'Windstorm',
-description: 'a storm of winds'
+description: 'a storm of winds',
+category_id: 1
 };
 
 const item2: Item = {
 id: 2,
 name: 'wristband',
-description: 'a band of wrists'
+description: 'a band of wrists',
+category_id: 1
 };
 
 const item3: Item = {
 id: 3,
 name: 'dog',
-description: 'barks'
+description: 'barks',
+category_id: 1
 };
 
 const item4: Item = {
 id: 4,
 name: 'cat',
-description: 'tries to bark'
+description: 'tries to bark',
+category_id: 1
 };
 
 const items1: Item[] = [item1, item2];
@@ -42,3 +46,5 @@ items: items2
 };
 
 export const CATEGORIES: Category[] = [category1, category2];
+export const ITEMS: Item[] = [item1, item2, item3, item4];
+export const ITEM: Item = item2;
