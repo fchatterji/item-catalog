@@ -19,14 +19,14 @@ const item3: Item = {
 id: 3,
 name: 'dog',
 description: 'barks',
-category_id: 1
+category_id: 2
 };
 
 const item4: Item = {
 id: 4,
 name: 'cat',
 description: 'tries to bark',
-category_id: 1
+category_id: 2
 };
 
 const items1: Item[] = [item1, item2];
