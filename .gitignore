@@ -5,7 +5,7 @@ local_settings.py
 
 # virtual env #
 ######################
-venv/
+backend/env/
 
 # Packages #
 ############
