@@ -6,11 +6,14 @@ import { ITEMS, ITEM} from './mock-categories';
 
 @Injectable()
 export class ItemService {
-  getItem(id: number) {
-    return ITEM
-  }
 
   getItems() {
   	return ITEMS
   }
+  
+  getItem(id: number) {
+    return ITEM
+  }
+
+
 }

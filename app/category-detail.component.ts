@@ -34,7 +34,4 @@ export class CategoryDetailComponent implements OnInit {
   ngOnInit() {
     this.getItems();
   }
-
-  onSelect(item: Item) { 
-    this.router.navigate(['/hero', hero.id]);
 }
