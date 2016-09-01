@@ -8,6 +8,7 @@ import { AppComponent }            from './app.component';
 import { CategoriesComponent }     from './categories.component';
 import { CategoryDetailComponent } from './category-detail.component';
 import { ItemDetailComponent }     from './item-detail.component';
+import { ItemsComponent }     from './items.component';
 
 import { CategoryService }  from './category.service';
 import { ItemService }      from './item.service';
@@ -23,7 +24,8 @@ import { ItemService }      from './item.service';
     AppComponent,
     CategoriesComponent,
     CategoryDetailComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    ItemsComponent
   ],
   providers: [
     CategoryService,

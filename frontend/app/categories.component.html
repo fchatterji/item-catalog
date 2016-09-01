@@ -6,4 +6,10 @@
   </li>
 </ul>
 
-<my-category-detail [category]="selectedCategory"></my-category-detail>
+<div *ngIf="selectedCategory">
+  <my-category-detail [category]="selectedCategory"></my-category-detail>
+</div>
+
+<div *ngIf="!selectedCategory">
+  <my-items>... loading</my-items>
+</div>
