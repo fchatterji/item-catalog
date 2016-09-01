@@ -19,7 +19,6 @@ export class ItemsComponent implements OnInit {
 
   getItems() {
     this.itemService.getItems().then(items => this.items = items);
-    console.log(this.items)
   }
 
   ngOnInit() {

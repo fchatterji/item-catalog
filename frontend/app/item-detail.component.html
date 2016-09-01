@@ -1,16 +1,16 @@
-<div>
-<h2>{{item.name}}</h2>
+<div class="item">
+  <h2>{{ item?.name }}</h2>
 
-<div>
-  <label>name: </label>
-  {{ item.name }}
-</div>
+	<div>
+		<label>name: </label>
+		{{ item?.name }}
+	</div>
 
-<div>
-  <label>description: </label>
-  {{ item.description }}
-</div>
+	<div>
+		<label>description: </label>
+		{{ item?.description }}
+	</div>
 
-<button (click)="gotoCategories()">Back</button>
+	<button (click)="gotoCategories()">Back</button>
 
 </div>

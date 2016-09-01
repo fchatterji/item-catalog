@@ -1,8 +1,11 @@
 
+
+
 <h2>{{category.name}} details</h2>
   <ul class="items">
-    <li *ngFor="let item of category.items">
+    <li *ngFor="let item of items">
     <button (click)="gotoDetail(item)">{{ item.name }} / {{ item.category_id }}</button>
     </li>
   </ul>
+
 

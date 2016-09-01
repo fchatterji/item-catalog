@@ -11,9 +11,8 @@ import { Item } from './item';
   templateUrl: 'app/item-detail.component.html',
   styleUrls: ['app/item-detail.component.css'],
 })
-export class ItemDetailComponent {
+export class ItemDetailComponent implements OnInit{
 
-  @Input()
   item: Item;
 
   constructor(
@@ -25,11 +24,18 @@ export class ItemDetailComponent {
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
       let id = +params['id'];
-      this.item = this.itemService.getItem(id);
+      this.itemService.getItem(id)
+                      .then(item => this.item = item);
     });
   }
+
+
 
   gotoCategories() {
     this.router.navigate(['/categories']);
   }
 }
+
+
+
+

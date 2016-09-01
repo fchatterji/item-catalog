@@ -6,7 +6,6 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Category } from './category';
 import { Item } from './item';
 
 @Injectable()
@@ -22,9 +21,10 @@ export class ItemService {
                .catch(this.handleError);
   }
 
-  getItem(id: number) {
-    return ITEM
-  }  
+  getItem(id: number): Promise<Item> {
+  	return this.getItems()
+  	           .then(items => items.find(item => item.id === id));       
+  }
 
   private handleError(error: any): Promise<any> {
   console.error('An error occurred', error); // for demo purposes only
