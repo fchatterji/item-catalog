@@ -4,11 +4,6 @@ import { FormsModule }   from '@angular/forms';
 import { routing }       from './app.routing';
 import { HttpModule }    from '@angular/http';
 
-// Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
-
-
 import { AppComponent }            from './app.component';
 import { CategoriesComponent }     from './categories.component';
 import { CategoryDetailComponent } from './category-detail.component';
@@ -22,7 +17,6 @@ import { ItemService }      from './item.service';
     BrowserModule,
     FormsModule,
     routing,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
     HttpModule
   ],
   declarations: [

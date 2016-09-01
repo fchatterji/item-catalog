@@ -7,14 +7,15 @@ import { Category } from './category';
 
 @Injectable()
 export class CategoryService {
-  private categoriesUrl = 'app/categories';  // URL to web api
+  private categoriesUrl = 'http://localhost:8000/categories.json';  // URL to web api
 
   constructor(private http: Http) { }
 
   getCategories(): Promise<Category[]> {
+
     return this.http.get(this.categoriesUrl)
                .toPromise()
-               .then(response => response.json().data as Category[])
+               .then(response => response.json() as Category[])
                .catch(this.handleError);
   }
 

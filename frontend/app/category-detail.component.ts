@@ -28,7 +28,7 @@ export class CategoryDetailComponent implements OnInit {
   }
 
   getItems() {
-    this.items = this.itemService.getItems()
+    this.itemService.getItems().then(items => this.items = items);
   }
 
   ngOnInit() {
