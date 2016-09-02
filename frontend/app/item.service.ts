@@ -1,6 +1,3 @@
-import { ITEMS, ITEM} from './mock-categories';
-
-
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
@@ -24,6 +21,11 @@ export class ItemService {
   getItem(id: number): Promise<Item> {
   	return this.getItems()
   	           .then(items => items.find(item => item.id === id));       
+  }
+
+  getItemsByCategory(category: number): Promise<Item[]> {
+    return this.getItems()
+               .then(items => items.filter(item => item.category === category));       
   }
 
   private handleError(error: any): Promise<any> {

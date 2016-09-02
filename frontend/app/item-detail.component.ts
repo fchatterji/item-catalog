@@ -18,8 +18,7 @@ export class ItemDetailComponent implements OnInit{
   constructor(
     private itemService: ItemService,
     private router: Router,
-    private route: ActivatedRoute) {
-  }
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
@@ -28,8 +27,6 @@ export class ItemDetailComponent implements OnInit{
                       .then(item => this.item = item);
     });
   }
-
-
 
   gotoCategories() {
     this.router.navigate(['/categories']);
