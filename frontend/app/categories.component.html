@@ -1,9 +1,19 @@
+<div>
+  <label>Category name:</label> <input #categoryName />
+  <button (click)="add(categoryName.value); categoryName.value=''">
+    Add
+  </button>
+</div>
+
+
 <ul class="categories">
-<li *ngFor="let category of categories" 
-    [class.selected]="category === selectedCategory"
-    (click)="onSelect(category)">
-  <span class="badge">{{category.id}}</span> {{category.name}}
-  </li>
+	<li *ngFor="let category of categories" 
+	    [class.selected]="category === selectedCategory"
+	    (click)="onSelect(category)">
+	  <span class="badge">{{category?.id}}</span> 
+	  <span> {{category?.name}} </span>
+	  <button class="delete" (click)="delete(category); $event.stopPropagation()">x</button>
+	 </li>
 </ul>
 
 <div *ngIf="selectedCategory">
@@ -13,3 +23,7 @@
 <div *ngIf="!selectedCategory">
   <my-items>... loading</my-items>
 </div>
+
+<button (click)="addItem(item)">add a new item</button>
+
+

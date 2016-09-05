@@ -35,4 +35,28 @@ export class CategoriesComponent implements OnInit {
     }
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.categoryService.create(name)
+      .then(hero => {
+        console.log(hero);
+        this.categories.push(hero);
+        this.selectedCategory = null;
+      });
+  }
+
+  addItem() {
+    this.router.navigate(['/item']);
+  }
+
+  delete(category: Category): void {
+    this.categoryService
+        .delete(category.id)
+        .then(() => {
+          this.categories = this.categories.filter(c => c !== category);
+          if (this.selectedCategory === category) { this.selectedCategory = null; }
+        });
+  }
+
 }

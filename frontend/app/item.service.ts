@@ -7,12 +7,14 @@ import { Item } from './item';
 
 @Injectable()
 export class ItemService {
-  private itemsUrl = 'http://localhost:8000/items.json';  // URL to web api
+  private headers = new Headers({'Content-Type': 'application/json'});
+  private itemsUrl = 'http://localhost:8000/items';  // URL to web api
+  private itemUrl = 'http://localhost:8000/item';  // URL to web api
 
   constructor(private http: Http) { }
 
   getItems(): Promise<Item[]> {
-    return this.http.get(this.itemsUrl)
+    return this.http.get(`${this.itemsUrl}.json`)
                .toPromise()
                .then(response => response.json() as Item[])
                .catch(this.handleError);
@@ -27,6 +29,16 @@ export class ItemService {
     return this.getItems()
                .then(items => items.filter(item => item.category === category));       
   }
+
+  update(item: Item): Promise<Item> {
+    const url = `${this.itemUrl}/${item.id}.json`;
+    return this.http
+      .put(url, JSON.stringify(item), {headers: this.headers})
+      .toPromise()
+      .then(() => item)
+      .catch(this.handleError);
+  }
+
 
   private handleError(error: any): Promise<any> {
   console.error('An error occurred', error); // for demo purposes only

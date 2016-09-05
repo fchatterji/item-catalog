@@ -14,6 +14,10 @@ const appRoutes: Routes = [
     component: CategoriesComponent
   },
   {
+  path: 'item',
+  component: ItemDetailComponent
+  },
+  {
   path: 'item/:id',
   component: ItemDetailComponent
   },
