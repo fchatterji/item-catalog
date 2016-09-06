@@ -29,19 +29,8 @@ export class ItemDetailComponent implements OnInit{
 
     this.route.params.forEach((params: Params) => {
       let id = +params['id'];
-
-      if (isNaN(id)) {
-        this.item_exists = false;
-      }
-
-      else {
-
-        this.item_exists = true;
         this.itemService.getItem(id)
                         .then(item => this.item = item);
-        console.log(this.item);
-      }
-
     });
 
   }
@@ -55,17 +44,15 @@ export class ItemDetailComponent implements OnInit{
   }
 
   submit(item: Item) {
-     console.log(item);
 
-    if (this.item_exists === true) {
-      console.log(this.item)
-      this.itemService.update(this.item)
+    if (this.item === undefined) {
+      this.item = item;
+      this.itemService.create(this.item)
                       .then(this.goBack);
     } 
 
     else {
-      this.item = item;
-      this.itemService.create(this.item)
+      this.itemService.update(this.item)
                       .then(this.goBack);
     }
   }
