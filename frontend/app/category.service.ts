@@ -22,6 +22,10 @@ export class CategoryService {
                .catch(this.handleError);
   }
 
+  getCategory(id: number): Promise<Category> {
+    return this.getCategories()
+               .then(categories => categories.find(category => category.id === id));       
+  }
 
   create(name: string): Promise<Category> {
     return this.http

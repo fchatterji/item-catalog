@@ -16,7 +16,6 @@ export class ItemDetailComponent implements OnInit{
 
   item: Item;
   categories: Category[];
-  item_exists: boolean;
 
   constructor(
     private itemService: ItemService,

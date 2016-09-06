@@ -7,10 +7,12 @@
 
 
 <ul class="categories">
-	<li *ngFor="let category of categories" 
+	<li *ngFor="let category of categories; let i=index" 
 	    [class.selected]="category === selectedCategory"
 	    (click)="onSelect(category)">
-	  <span class="badge">{{category?.id}}</span> 
+	  <!-- The span shows the index of each category in the list.
+	  The index should start with 1 and not 0, so so we add +1 to it-->
+	  <span class="badge">{{ i +1 }}</span> 
 	  <span> {{category?.name}} </span>
 	  <button class="delete" (click)="delete(category); $event.stopPropagation()">x</button>
 	 </li>
