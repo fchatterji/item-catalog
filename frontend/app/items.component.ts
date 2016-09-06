@@ -29,4 +29,11 @@ export class ItemsComponent implements OnInit {
     this.router.navigate(['/item', item.id]);
   }
 
+  delete(item: Item): void {
+    this.itemService
+        .delete(item.id)
+        .then(() => {
+          this.items = this.items.filter(i => i !== item);
+        });
+  }
 }
