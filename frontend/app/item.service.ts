@@ -39,6 +39,14 @@ export class ItemService {
       .catch(this.handleError);
   }
 
+  create(item: Item): Promise<Item> {
+    const url = `${this.itemsUrl}/`;
+    return this.http
+      .post(url, JSON.stringify(item), {headers: this.headers})
+      .toPromise()
+      .then(() => item)
+      .catch(this.handleError);
+  }
 
   private handleError(error: any): Promise<any> {
   console.error('An error occurred', error); // for demo purposes only
