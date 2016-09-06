@@ -32,6 +32,10 @@ export class CategoryDetailComponent implements OnInit {
                     .then(items => this.items = items);  
   }
 
+  ngOnChanges() {
+    this.getItems();
+  }
+
   ngOnInit() {
     this.getItems();
   }

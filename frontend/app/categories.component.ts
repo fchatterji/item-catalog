@@ -27,7 +27,7 @@ export class CategoriesComponent implements OnInit {
     this.getCategories();
   }
 
-  onSelect(category: Category) { 
+  onSelect(category: Category) {
     if (this.selectedCategory === category) {
       this.selectedCategory = null;
     } else {
@@ -39,9 +39,8 @@ export class CategoriesComponent implements OnInit {
     name = name.trim();
     if (!name) { return; }
     this.categoryService.create(name)
-      .then(hero => {
-        console.log(hero);
-        this.categories.push(hero);
+      .then(item => {
+        this.categories.push(item);
         this.selectedCategory = null;
       });
   }

@@ -17,7 +17,7 @@
 </ul>
 
 <div *ngIf="selectedCategory">
-  <my-category-detail [category]="selectedCategory"></my-category-detail>
+  <my-category-detail [category]="selectedCategory">... loading</my-category-detail>
 </div>
 
 <div *ngIf="!selectedCategory">
