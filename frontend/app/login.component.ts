@@ -2,7 +2,6 @@ import { Component, NgZone } from '@angular/core';
 
 // Google's login API namespace
 declare var gapi:any;
-console.log(gapi);
 
 @Component({
     selector: "login",

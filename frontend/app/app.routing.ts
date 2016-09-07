@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CategoriesComponent } from './categories.component';
 import { ItemDetailComponent } from './item-detail.component';
+import { LoginComponent } from './login.component';
 
 import { AuthGuard } from './auth.guard.service';
 
@@ -25,6 +26,11 @@ const appRoutes: Routes = [
   {
   path: 'item/:id',
   component: ItemDetailComponent,
+  canActivate: [AuthGuard]
+  },
+  {
+  path: 'login',
+  component: LoginComponent,
   canActivate: [AuthGuard]
   },
 ];
