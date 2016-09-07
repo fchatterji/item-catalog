@@ -12,8 +12,11 @@ import { CategoryDetailComponent } from './category-detail.component';
 import { ItemsComponent }     from './items.component';
 import { ItemDetailComponent }     from './item-detail.component';
 
+import { LoginComponent } from './login.component';
+
 import { CategoryService }  from './category.service';
 import { ItemService }      from './item.service';
+import { AuthGuard } from './auth.guard.service';
 
 @NgModule({
   imports: [
@@ -27,11 +30,13 @@ import { ItemService }      from './item.service';
     CategoriesComponent,
     CategoryDetailComponent,
     ItemDetailComponent,
-    ItemsComponent
+    ItemsComponent,
+    LoginComponent
   ],
   providers: [
     CategoryService,
-    ItemService
+    ItemService,
+    AuthGuard
   ],
   bootstrap: [ AppComponent ]
 })

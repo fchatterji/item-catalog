@@ -21,42 +21,10 @@
   </head>
   <!-- 3. Display the application -->
   <body>
-  
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <a href="#" onclick="signOut();">Sign out</a>
+
+
 
     <my-app>Loading...</my-app>
-
-    <script>
-      function onSignIn(googleUser) {
-        // After a user successfully signs in, get the user's ID token
-        var id_token = googleUser.getAuthResponse().id_token;
-
-        // Then, send the ID token to your server with an HTTPS POST request:
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://yourbackend.example.com/tokensignin');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function() {
-          console.log('Signed in as: ' + xhr.responseText);
-        };
-        xhr.send('idtoken=' + id_token);
-
-        // Get profile information
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); 
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail());
-      }
-
-      function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-          console.log('User signed out.');
-        });
-      }
-
-    </script>
 
   </body>
 </html>
