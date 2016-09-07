@@ -17,6 +17,7 @@ import { LoginComponent } from './login.component';
 import { CategoryService }  from './category.service';
 import { ItemService }      from './item.service';
 import { AuthGuard } from './auth.guard.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { AuthGuard } from './auth.guard.service';
   providers: [
     CategoryService,
     ItemService,
-    AuthGuard
+    AuthGuard,
+    AuthService
   ],
   bootstrap: [ AppComponent ]
 })
