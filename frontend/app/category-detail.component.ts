@@ -10,8 +10,8 @@ import { Item } from './item';
 
 @Component({
   selector: 'my-category-detail',
-  templateUrl:'app/category-detail.component.html',
-  styleUrls: ['app/category-detail.component.css'],
+  templateUrl:'templates/category-detail.component.html',
+  styleUrls: ['styles/category-detail.component.css'],
 })
 export class CategoryDetailComponent implements OnInit {
   @Input()

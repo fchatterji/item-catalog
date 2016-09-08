@@ -31,7 +31,6 @@ const appRoutes: Routes = [
   {
   path: 'login',
   component: LoginComponent,
-  canActivate: [AuthGuard]
   },
 ];
 export const routing = RouterModule.forRoot(appRoutes);
