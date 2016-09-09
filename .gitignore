@@ -1,6 +1,7 @@
 # python #
 ######################
-*.pyc
+**.pyc
+backend/settings.pyc
 
 # django #
 ######################
@@ -38,4 +39,4 @@ typings/
 
 # db #
 ######################
-*.sqlite3
+**.sqlite3
