@@ -7,11 +7,17 @@ import { LoginComponent } from './login.component';
 import { AuthGuard } from './auth.guard.service';
 
 const appRoutes: Routes = [
+  // Defines the urls of the app, 
+  // the components associated with them
+  // and the component responsible for permissions (auth guard)
   {
     path: '',
     redirectTo: '/categories',
-    pathMatch: 'full',
-    canActivate: [AuthGuard]
+    pathMatch: 'full', //When making a redirect it is important to tell the 
+    //router how to match the URL. There are two options for that - full or 
+    //prefix. full matches the URL as it is while prefix matches URL prefixed 
+    //with the redirect path.
+    canActivate: [AuthGuard] 
   },
   {
     path: 'categories',

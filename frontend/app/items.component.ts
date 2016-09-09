@@ -11,6 +11,8 @@ import { ItemService } from './item.service';
 })
 
 export class ItemsComponent implements OnInit {
+  // Component linked to a list of all items
+
   items: Item[];
 
   constructor(
@@ -18,6 +20,7 @@ export class ItemsComponent implements OnInit {
     private itemService: ItemService) { }
 
   getItems() {
+    // Get all items from the item service
     this.itemService.getItems().then(items => this.items = items);
   }
 
@@ -26,10 +29,12 @@ export class ItemsComponent implements OnInit {
   }
 
   gotoDetail(item) {
+    // Navigate to the detail page of an item
     this.router.navigate(['/item', item.id]);
   }
 
   delete(item: Item): void {
+    // call the item service to delete an item
     this.itemService
         .delete(item.id)
         .then(() => {

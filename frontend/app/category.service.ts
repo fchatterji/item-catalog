@@ -9,12 +9,13 @@ import { Category } from './category';
 export class CategoryService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private categoriesUrl = 'http://localhost:8000/categories.json';  // URL to web api
-  private categoryUrl = 'http://localhost:8000/category';  // URL to web api
+  private categoriesUrl = 'http://localhost:8000/categories.json';  // URL to backend API
+  private categoryUrl = 'http://localhost:8000/category';  // URL to backend API
 
   constructor(private http: Http) { }
 
   getCategories(): Promise<Category[]> {
+    // Get a list of categories from the database
 
     return this.http.get(this.categoriesUrl)
                .toPromise()
@@ -23,11 +24,13 @@ export class CategoryService {
   }
 
   getCategory(id: number): Promise<Category> {
+    // Get a signle category from the database, through it's id
     return this.getCategories()
                .then(categories => categories.find(category => category.id === id));       
   }
 
   create(name: string): Promise<Category> {
+    // Create a category in the database
     return this.http
       .post(this.categoriesUrl, JSON.stringify({name: name}), {headers: this.headers})
       .toPromise()
@@ -36,6 +39,7 @@ export class CategoryService {
   }
 
   delete(id: number): Promise<void> {
+    // Delete a category from the database
 
     let url = `${this.categoryUrl}/${id}.json`;
     return this.http.delete(url)
@@ -45,7 +49,8 @@ export class CategoryService {
   }
 
   private handleError(error: any): Promise<any> {
-  console.error('An error occurred', error); // for demo purposes only
-  return Promise.reject(error.message || error);
+    // Very simple error handling function
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
   }
 }

@@ -9,4 +9,9 @@ urlpatterns = [
     url(r'^item/(?P<pk>[0-9]+)/$', views.ItemDetail.as_view()),
 ]
 
+"""
+Returns a URL pattern list which includes format suffix patterns appended to 
+each of the URL patterns provided.
+See http://www.django-rest-framework.org/api-guide/format-suffixes/ for details
+"""
 urlpatterns = format_suffix_patterns(urlpatterns)

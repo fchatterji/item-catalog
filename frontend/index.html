@@ -1,13 +1,14 @@
 <html>
-  <head>
+
+<head>
     <base href="/">
     <title>Angular 2 QuickStart</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-signin-client_id" content="775273345656-l41qk7gdvhovlh5mdrvnhfa3hdrtf2ef.apps.googleusercontent.com">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <!-- 1. Load libraries -->
-     <!-- Polyfill(s) for older browsers -->
+    <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
@@ -15,16 +16,32 @@
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
     <script>
-      System.import('app').catch(function(err){ console.error(err); });
+        System.import('app').catch(function(err) {
+            console.error(err);
+        });
     </script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-  </head>
-  <!-- 3. Display the application -->
-  <body>
+    <script src="https://apis.google.com/js/platform.js"></script>
+</head>
 
-
+<body>
 
     <my-app>Loading...</my-app>
 
-  </body>
+    <script>
+
+      var auth2; // The Sign-In object.
+
+      var initSigninV2 = function() {
+          auth2 = gapi.auth2.init({
+            client_id: '775273345656-l41qk7gdvhovlh5mdrvnhfa3hdrtf2ef.apps.googleusercontent.com',
+            scope: 'profile'
+          });
+        }
+
+        gapi.load('auth2', initSigninV2);
+
+    </script>
+
+</body>
+
 </html>

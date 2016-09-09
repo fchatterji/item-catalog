@@ -11,6 +11,7 @@ import { CategoryService } from './category.service';
 })
 
 export class CategoriesComponent implements OnInit {
+  /* Main component, displays a list of categories and associated items */
   
   categories: Category[];
   selectedCategory: Category;
@@ -28,6 +29,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   onSelect(category: Category) {
+    // When a user clicks on a category, it is highlighted
     if (this.selectedCategory === category) {
       this.selectedCategory = null;
     } else {
@@ -36,6 +38,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   add(name: string): void {
+    // add a category to the list and call the service to create it in the database
     name = name.trim();
     if (!name) { return; }
     this.categoryService.create(name)
@@ -50,6 +53,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   delete(category: Category): void {
+    // delete a category to the list and call the service to delete it in the database
     this.categoryService
         .delete(category.id)
         .then(() => {
