@@ -8,11 +8,11 @@ import { Item } from './item';
 import { Category } from './category';
 
 @Component({
-  selector: 'my-item-detail',
-  templateUrl: 'templates/item-detail.component.html',
-  styleUrls: ['css/item-detail.component.css'],
+  selector: 'my-item-form',
+  templateUrl: 'templates/item-form.component.html',
+  styleUrls: ['css/item-form.component.css'],
 })
-export class ItemDetailComponent implements OnInit{
+export class ItemFormComponent implements OnInit{
   // Component linked to a form that allows the user to view the detail
   // of an item, create and edit them.
 

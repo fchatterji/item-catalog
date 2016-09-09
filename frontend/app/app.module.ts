@@ -10,7 +10,7 @@ import { CategoriesComponent }     from './categories.component';
 import { CategoryDetailComponent } from './category-detail.component';
 
 import { ItemsComponent }     from './items.component';
-import { ItemDetailComponent }     from './item-detail.component';
+import { ItemFormComponent }     from './item-form.component';
 
 import { LoginComponent } from './login.component';
 
@@ -30,7 +30,7 @@ import { AuthService } from './auth.service';
     AppComponent,
     CategoriesComponent,
     CategoryDetailComponent,
-    ItemDetailComponent,
+    ItemFormComponent,
     ItemsComponent,
     LoginComponent
   ],
