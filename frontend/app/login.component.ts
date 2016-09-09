@@ -22,20 +22,20 @@ export class LoginComponent {
 
   // An injectable service for executing work inside or outside of the Angular zone.
   // Necessary to work with google signin
-  // To-do: understand how this works
   constructor(private _zone: NgZone, private authService: AuthService, private router: Router) { }
 
+  // Angular hook that allows for interaction with elements inserted after the
+  // rendering of a view, in this case the gapi
   ngAfterViewInit() {
     
-    // Converts the Google login button stub to an actual button.
-    gapi.signin2.render(
-      this.googleLoginButtonId,
-      { 
-        "onSuccess": this.onGoogleLoginSuccess,
-        "scope": "profile",
-        "theme": "dark"
-      }
-    );
+  // Converts the Google login button stub to an actual button.
+  gapi.signin2.render(
+    this.googleLoginButtonId,
+    {
+      "onSuccess": this.onGoogleLoginSuccess,
+      "scope": "profile",
+      "theme": "dark"
+    });
   }
 
   // Triggered after a user successfully logs in using the Google external
