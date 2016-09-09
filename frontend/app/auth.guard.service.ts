@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
 
-    if (this.authService.getIsLoggedIn()) { return true; }
+    if (this.authService.isLoggedIn()) { return true; }
 
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = state.url;
@@ -23,4 +23,5 @@ export class AuthGuard implements CanActivate {
     // Navigate to the login page
     this.router.navigate(['/login']);
     return false;
+  }
 }

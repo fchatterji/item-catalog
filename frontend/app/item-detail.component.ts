@@ -10,7 +10,7 @@ import { Category } from './category';
 @Component({
   selector: 'my-item-detail',
   templateUrl: 'templates/item-detail.component.html',
-  styleUrls: ['styles/item-detail.component.css'],
+  styleUrls: ['css/item-detail.component.css'],
 })
 export class ItemDetailComponent implements OnInit{
   // Component linked to a form that allows the user to view the detail

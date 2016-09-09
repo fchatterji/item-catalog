@@ -9,7 +9,7 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
-  getIsLoggedIn() {
+  isLoggedIn() {
     return auth2.isSignedIn.get();
   }
 }

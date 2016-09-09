@@ -11,7 +11,7 @@ import { Item } from './item';
 @Component({
   selector: 'my-category-detail',
   templateUrl:'templates/category-detail.component.html',
-  styleUrls: ['styles/category-detail.component.css'],
+  styleUrls: ['css/category-detail.component.css'],
 })
 export class CategoryDetailComponent implements OnInit {
   // Detail of a category
