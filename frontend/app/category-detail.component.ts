@@ -14,6 +14,8 @@ import { Item } from './item';
   styleUrls: ['styles/category-detail.component.css'],
 })
 export class CategoryDetailComponent implements OnInit {
+  // Detail of a category
+
   @Input()
   category: Category;
   items: Item[];
@@ -24,10 +26,12 @@ export class CategoryDetailComponent implements OnInit {
     private itemService: ItemService) { }
 
   gotoDetail(item) {
+    // Navigate to the detail page of an item
     this.router.navigate(['/item', item.id]);
   }
 
   getItems() {
+    // Get all the items of this category
     this.itemService.getItemsByCategory(this.category.id)
                     .then(items => this.items = items);  
   }

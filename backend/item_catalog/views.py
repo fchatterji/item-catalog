@@ -10,6 +10,7 @@ class CategoryList(APIView):
     """
     List all categories, or create a new category.
     """
+
     def get(self, request, format=None):
         categories = Category.objects.all()
         serializer = CategorySerializer(categories, many=True)
@@ -27,6 +28,7 @@ class CategoryDetail(APIView):
     """
     Retrieve, update or delete a Category instance.
     """
+
     def get_object(self, pk):
         try:
             return Category.objects.get(pk=pk)
@@ -56,6 +58,7 @@ class ItemList(APIView):
     """
     List all items, or create a new item.
     """
+
     def get(self, request, format=None):
         items = Item.objects.all()
         serializer = ItemSerializer(items, many=True)
@@ -73,6 +76,7 @@ class ItemDetail(APIView):
     """
     Retrieve, update or delete a Category instance.
     """
+    
     def get_object(self, pk):
         try:
             return Item.objects.get(pk=pk)
