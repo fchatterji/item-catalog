@@ -36,10 +36,13 @@ In your terminal, navigate to the project's backend folder and type
 
 The backend provides the following endpoints:
 
-http://localhost:8000/categories
-http://localhost:8000/category/[category id]
-http://localhost:8000/items
-http://localhost:8000/item/[item id]
+- http://localhost:8000/categories
+
+- http://localhost:8000/category/[category id]
+
+- http://localhost:8000/items
+
+- http://localhost:8000/item/[item id]
 
 Those endpoints are available in json. Simply add .json at the end of the url.
 
