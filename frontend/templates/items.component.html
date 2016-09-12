@@ -1,6 +1,16 @@
-<ul class="items">
-  <li *ngFor="let item of items">
-    <button (click)="gotoDetail(item)">{{ item.name }} / {{ item.category_name }}</button>
-    <button class="delete" (click)="delete(item); $event.stopPropagation()">x</button>
-  </li>
-</ul>
+<div *ngFor="let item of items">
+
+  <div class="panel panel-default items" (click)="gotoDetail(item)">
+    <div class="panel-heading">
+      <p class="panel-title">
+        {{ item.name }} / {{ item.category_name }}
+        <span class="delete badge" (click)="delete(item); $event.stopPropagation()">x</span>
+      </p>
+
+    </div>
+    <div class="panel-body">{{ item.description }}</div>
+
+  </div>
+</div>
+
+<button class="glyphicon glyphicon-plus btn" data-toggle="tooltip" title="Add a new item" data-animation="true" (click)="addItem(item)"></button>

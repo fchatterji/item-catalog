@@ -1,36 +1,27 @@
-<login></login>
+<div class="col-sm-12 col-md-6">
 
-<div class="row">
-  <div class="col-sm-6 col-md-4">
+  <ul class="categories list-group">
+    <li class="list-group-item" *ngFor="let category of categories; let i=index" [class.selected]="category === selectedCategory" (click)="onSelect(category)">
 
-    <ul class="categories list-group">
-      <li class="list-group-item" *ngFor="let category of categories; let i=index" [class.selected]="category === selectedCategory" (click)="onSelect(category)">
-
-        <span class="index">{{ i +1 }}</span>
-        <!-- The span shows the index of each category in the list.
+      <span class="index">{{ i +1 }}</span>
+      <!-- The span shows the index of each category in the list.
       The index should start with 1 and not 0, so so we add +1 to it-->
 
-        <span class="text">{{category?.name}}</span>
-        <button class=" badge delete" (click)="delete(category); $event.stopPropagation()">x</button>
-      </li>
-    </ul>
+      <span class="text">{{category?.name}}</span>
+      <button class=" badge delete" (click)="delete(category); $event.stopPropagation()">x</button>
+    </li>
+  </ul>
 
-    <div>
-      <label>Add a category:</label>
-      <input #categoryName />
-      <button (click)="add(categoryName.value); categoryName.value=''">Add</button>
-    </div>
-
+  <div>
+    <label>Add a category:</label>
+    <input #categoryName />
+    <button (click)="add(categoryName.value); categoryName.value=''">Add</button>
   </div>
+
 </div>
 
-<div class="row">
-  <div class="col-sm-6 col-md-4">
+<div class="col-sm-12 col-md-6">
+  <my-items [category]="selectedCategory"> <i class="fa fa-circle-o-notch"></i>
+  </my-items>
 
-    <my-items [category]="selectedCategory"> <i class="fa fa-circle-o-notch"></i>
-    </my-items>
-
-    <button (click)="addItem(item)">add a new item</button>
-
-  </div>
 </div>

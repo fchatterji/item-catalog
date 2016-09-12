@@ -46,6 +46,10 @@ export class ItemsComponent implements OnInit {
     this.getItems();
   }
 
+  addItem() {
+    this.router.navigate(['/item']);
+  }
+  
   gotoDetail(item) {
     // Navigate to the detail page of an item
     this.router.navigate(['/item', item.id]);

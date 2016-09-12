@@ -48,10 +48,6 @@ export class CategoriesComponent implements OnInit {
       });
   }
 
-  addItem() {
-    this.router.navigate(['/item']);
-  }
-
   delete(category: Category): void {
     // delete a category to the list and call the service to delete it in the database
     this.categoryService

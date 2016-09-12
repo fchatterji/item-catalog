@@ -14,7 +14,7 @@ declare var auth2: any;
 })
 export class LoginComponent {
   // Component tied to a login and a signout button. Login and signout use google signin
-
+  isLoggedIn: boolean;
   googleLoginButtonId = "google-login-button";
   redirectUrl: string;
 
@@ -34,6 +34,8 @@ export class LoginComponent {
         "scope": "profile",
         "theme": "dark"
       });
+
+    this.isLoggedIn = this.authService.isLoggedIn();
   }
 
   // Triggered after a user successfully logs in using the Google external
