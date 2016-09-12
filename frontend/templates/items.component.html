@@ -1,7 +1,6 @@
 <ul class="items">
-    <li *ngFor="let item of items">
-        <button (click)="gotoDetail(item)">{{ item.name }} / {{ item.category_name }}</button>
-        <button class="delete" (click)="delete(item); $event.stopPropagation()">x</button>
-    </li>
+  <li *ngFor="let item of items">
+    <button (click)="gotoDetail(item)">{{ item.name }} / {{ item.category_name }}</button>
+    <button class="delete" (click)="delete(item); $event.stopPropagation()">x</button>
+  </li>
 </ul>
-

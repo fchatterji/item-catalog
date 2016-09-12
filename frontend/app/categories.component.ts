@@ -7,12 +7,12 @@ import { CategoryService } from './category.service';
 @Component({
   selector: 'my-categories',
   templateUrl: 'templates/categories.component.html',
-  styleUrls:  ['css/categories.component.css'],
+  styleUrls: ['css/categories.component.css'],
 })
 
 export class CategoriesComponent implements OnInit {
   /* Main component, displays a list of categories and associated items */
-  
+
   categories: Category[];
   selectedCategory: Category;
 
@@ -33,7 +33,7 @@ export class CategoriesComponent implements OnInit {
     if (this.selectedCategory === category) {
       this.selectedCategory = null;
     } else {
-      this.selectedCategory = category; 
+      this.selectedCategory = category;
     }
   }
 
@@ -55,11 +55,11 @@ export class CategoriesComponent implements OnInit {
   delete(category: Category): void {
     // delete a category to the list and call the service to delete it in the database
     this.categoryService
-        .delete(category.id)
-        .then(() => {
-          this.categories = this.categories.filter(c => c !== category);
-          if (this.selectedCategory === category) { this.selectedCategory = null; }
-        });
+      .delete(category.id)
+      .then(() => {
+        this.categories = this.categories.filter(c => c !== category);
+        if (this.selectedCategory === category) { this.selectedCategory = null; }
+      });
   }
 
 }

@@ -7,7 +7,7 @@ import { Item } from './item';
 
 @Injectable()
 export class ItemService {
-  private headers = new Headers({'Content-Type': 'application/json'});
+  private headers = new Headers({ 'Content-Type': 'application/json' });
   private itemsUrl = 'http://localhost:8000/items';  // URL to backend
   private itemUrl = 'http://localhost:8000/item';  // URL to backend
 
@@ -17,23 +17,23 @@ export class ItemService {
     // Return a list of all items from the database
 
     return this.http.get(`${this.itemsUrl}.json`)
-               .toPromise()
-               .then(response => response.json() as Item[])
-               .catch(this.handleError);
+      .toPromise()
+      .then(response => response.json() as Item[])
+      .catch(this.handleError);
   }
 
   getItem(id: number): Promise<Item> {
     // Return a single item from the database, using an id
 
-  	return this.getItems()
-  	           .then(items => items.find(item => item.id === id));       
+    return this.getItems()
+      .then(items => items.find(item => item.id === id));
   }
 
   getItemsByCategory(category: number): Promise<Item[]> {
     // Return a list of items from the database, using a category
 
     return this.getItems()
-               .then(items => items.filter(item => item.category === category));       
+      .then(items => items.filter(item => item.category === category));
   }
 
   update(item: Item): Promise<Item> {
@@ -41,7 +41,7 @@ export class ItemService {
 
     const url = `${this.itemUrl}/${item.id}.json`;
     return this.http
-      .put(url, JSON.stringify(item), {headers: this.headers}) // send a post request to the backend
+      .put(url, JSON.stringify(item), { headers: this.headers }) // send a post request to the backend
       .toPromise() // angular returns an observable, here converted to a promise. Observable have 
       // more features but promises are easier to use. 
       .then(() => item)
@@ -53,7 +53,7 @@ export class ItemService {
 
     const url = `${this.itemsUrl}/`;
     return this.http
-      .post(url, JSON.stringify(item), {headers: this.headers}) // send a put request to the backend
+      .post(url, JSON.stringify(item), { headers: this.headers }) // send a put request to the backend
       .toPromise() // angular returns an observable, here converted to a promise. Observable have 
       // more features but promises are easier to use.
       .then(() => item)

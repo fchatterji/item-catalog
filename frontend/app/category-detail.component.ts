@@ -10,7 +10,7 @@ import { Item } from './item';
 
 @Component({
   selector: 'my-category-detail',
-  templateUrl:'templates/category-detail.component.html',
+  templateUrl: 'templates/category-detail.component.html',
   styleUrls: ['css/category-detail.component.css'],
 })
 export class CategoryDetailComponent implements OnInit {
@@ -33,7 +33,7 @@ export class CategoryDetailComponent implements OnInit {
   getItems() {
     // Get all the items of this category
     this.itemService.getItemsByCategory(this.category.id)
-                    .then(items => this.items = items);  
+      .then(items => this.items = items);
   }
 
   ngOnChanges() {

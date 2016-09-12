@@ -1,31 +1,28 @@
-  <login></login>
+<login></login>
 <div>
-    <label>Category name:</label>
-    <input #categoryName />
-    <button (click)="add(categoryName.value); categoryName.value=''">
-        Add
-    </button>
+  <label>Category name:</label>
+  <input #categoryName />
+  <button (click)="add(categoryName.value); categoryName.value=''">Add</button>
 </div>
 
-
 <ul class="categories">
-    <li *ngFor="let category of categories; let i=index" [class.selected]="category === selectedCategory" (click)="onSelect(category)">
+  <li *ngFor="let category of categories; let i=index" [class.selected]="category === selectedCategory" (click)="onSelect(category)">
 
-        <span class="badge">{{ i +1 }}</span>
-        <!-- The span shows the index of each category in the list.
-	  The index should start with 1 and not 0, so so we add +1 to it-->
+    <span class="badge">{{ i +1 }}</span>
+    <!-- The span shows the index of each category in the list.
+      The index should start with 1 and not 0, so so we add +1 to it-->
 
-        <span> {{category?.name}} </span>
-        <button class="delete" (click)="delete(category); $event.stopPropagation()">x</button>
-    </li>
+    <span>{{category?.name}}</span>
+    <button class="delete" (click)="delete(category); $event.stopPropagation()">x</button>
+  </li>
 </ul>
 
 <div *ngIf="selectedCategory">
-    <my-category-detail [category]="selectedCategory">... loading</my-category-detail>
+  <my-category-detail [category]="selectedCategory">... loading</my-category-detail>
 </div>
 
 <div *ngIf="!selectedCategory">
-    <my-items>... loading</my-items>
+  <my-items>... loading</my-items>
 </div>
 
 <button (click)="addItem(item)">add a new item</button>

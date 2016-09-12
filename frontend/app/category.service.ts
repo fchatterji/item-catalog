@@ -8,7 +8,7 @@ import { Category } from './category';
 @Injectable()
 export class CategoryService {
 
-  private headers = new Headers({'Content-Type': 'application/json'});
+  private headers = new Headers({ 'Content-Type': 'application/json' });
   private categoriesUrl = 'http://localhost:8000/categories.json';  // URL to backend API
   private categoryUrl = 'http://localhost:8000/category';  // URL to backend API
 
@@ -18,21 +18,21 @@ export class CategoryService {
     // Get a list of categories from the database
 
     return this.http.get(this.categoriesUrl)
-               .toPromise()
-               .then(response => response.json() as Category[])
-               .catch(this.handleError);
+      .toPromise()
+      .then(response => response.json() as Category[])
+      .catch(this.handleError);
   }
 
   getCategory(id: number): Promise<Category> {
     // Get a signle category from the database, through it's id
     return this.getCategories()
-               .then(categories => categories.find(category => category.id === id));       
+      .then(categories => categories.find(category => category.id === id));
   }
 
   create(name: string): Promise<Category> {
     // Create a category in the database
     return this.http
-      .post(this.categoriesUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.categoriesUrl, JSON.stringify({ name: name }), { headers: this.headers })
       .toPromise()
       .then(response => response.json())
       .catch(this.handleError);

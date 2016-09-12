@@ -7,7 +7,7 @@ import { ItemService } from './item.service';
 @Component({
   selector: 'my-items',
   templateUrl: 'templates/items.component.html',
-  styleUrls:  ['css/items.component.css'],
+  styleUrls: ['css/items.component.css'],
 })
 
 export class ItemsComponent implements OnInit {
@@ -36,9 +36,9 @@ export class ItemsComponent implements OnInit {
   delete(item: Item): void {
     // call the item service to delete an item
     this.itemService
-        .delete(item.id)
-        .then(() => {
-          this.items = this.items.filter(i => i !== item);
-        });
+      .delete(item.id)
+      .then(() => {
+        this.items = this.items.filter(i => i !== item);
+      });
   }
 }

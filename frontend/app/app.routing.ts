@@ -7,9 +7,6 @@ import { LoginComponent } from './login.component';
 import { AuthGuard } from './auth.guard.service';
 
 const appRoutes: Routes = [
-  // Defines the urls of the app, 
-  // the components associated with them
-  // and the component responsible for permissions (auth guard)
   {
     path: '',
     redirectTo: '/categories',
@@ -17,7 +14,7 @@ const appRoutes: Routes = [
     //router how to match the URL. There are two options for that - full or 
     //prefix. full matches the URL as it is while prefix matches URL prefixed 
     //with the redirect path.
-    canActivate: [AuthGuard] 
+    canActivate: [AuthGuard]
   },
   {
     path: 'categories',
@@ -25,18 +22,18 @@ const appRoutes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-  path: 'item',
-  component: ItemFormComponent,
-  canActivate: [AuthGuard]
+    path: 'item',
+    component: ItemFormComponent,
+    canActivate: [AuthGuard]
   },
   {
-  path: 'item/:id',
-  component: ItemFormComponent,
-  canActivate: [AuthGuard]
+    path: 'item/:id',
+    component: ItemFormComponent,
+    canActivate: [AuthGuard]
   },
   {
-  path: 'login',
-  component: LoginComponent,
+    path: 'login',
+    component: LoginComponent,
   },
 ];
 export const routing = RouterModule.forRoot(appRoutes);

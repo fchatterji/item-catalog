@@ -1,46 +1,45 @@
 <html>
 
 <head>
-    <base href="/">
-    <title>Item catalog</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-signin-client_id" content="775273345656-l41qk7gdvhovlh5mdrvnhfa3hdrtf2ef.apps.googleusercontent.com">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- 1. Load libraries -->
-    <!-- Polyfill(s) for older browsers -->
-    <script src="node_modules/core-js/client/shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <!-- 2. Configure SystemJS -->
-    <script src="systemjs.config.js"></script>
-    <script>
-        System.import('app').catch(function(err) {
-            console.error(err);
-        });
-    </script>
-    <script src="https://apis.google.com/js/platform.js"></script>
+  <base href="/">
+  <title>Item catalog</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-signin-client_id" content="775273345656-l41qk7gdvhovlh5mdrvnhfa3hdrtf2ef.apps.googleusercontent.com">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- 1. Load libraries -->
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <!-- 2. Configure SystemJS -->
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('app').catch(function(err) {
+      console.error(err);
+    });
+  </script>
+  <script src="https://apis.google.com/js/platform.js"></script>
 </head>
 
 <body>
 
-    <my-app>Loading...</my-app>
+  <my-app>Loading...</my-app>
 
-    <script>
+  <script>
+    var auth2; // The Sign-In object.
 
-      var auth2; // The Sign-In object.
+    var initSigninV2 = function() {
+      auth2 = gapi.auth2.init({
+        client_id: '775273345656-l41qk7gdvhovlh5mdrvnhfa3hdrtf2ef.apps.googleusercontent.com',
+        scope: 'profile'
+      });
+    }
 
-      var initSigninV2 = function() {
-          auth2 = gapi.auth2.init({
-            client_id: '775273345656-l41qk7gdvhovlh5mdrvnhfa3hdrtf2ef.apps.googleusercontent.com',
-            scope: 'profile'
-          });
-        }
-
-        gapi.load('auth2', initSigninV2);
-        
-    </script>
+    // initialize the auth2 object
+    gapi.load('auth2', initSigninV2);
+  </script>
 
 </body>
 

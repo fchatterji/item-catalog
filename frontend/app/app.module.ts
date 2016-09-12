@@ -40,6 +40,6 @@ import { AuthService } from './auth.service';
     AuthGuard,
     AuthService
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

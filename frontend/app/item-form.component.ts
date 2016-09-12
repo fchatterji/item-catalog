@@ -12,7 +12,7 @@ import { Category } from './category';
   templateUrl: 'templates/item-form.component.html',
   styleUrls: ['css/item-form.component.css'],
 })
-export class ItemFormComponent implements OnInit{
+export class ItemFormComponent implements OnInit {
   // Component linked to a form that allows the user to view the detail
   // of an item, create and edit them.
 
@@ -33,8 +33,8 @@ export class ItemFormComponent implements OnInit{
     // Get the item from the database. The id of the item is in the url
     this.route.params.forEach((params: Params) => {
       let id = +params['id'];
-        this.itemService.getItem(id)
-                        .then(item => this.item = item);
+      this.itemService.getItem(id)
+        .then(item => this.item = item);
     });
   }
 
@@ -54,12 +54,12 @@ export class ItemFormComponent implements OnInit{
     if (this.item === undefined) {
       this.item = item;
       this.itemService.create(this.item)
-                      .then(this.goBack);
-    } 
+        .then(this.goBack);
+    }
 
     else {
       this.itemService.update(this.item)
-                      .then(this.goBack);
+        .then(this.goBack);
     }
   }
 }
