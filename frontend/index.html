@@ -6,7 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-signin-client_id" content="775273345656-l41qk7gdvhovlh5mdrvnhfa3hdrtf2ef.apps.googleusercontent.com">
+  <!-- Bootstrap -->
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   <!-- 1. Load libraries -->
   <!-- Polyfill(s) for older browsers -->
   <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -25,9 +28,13 @@
 
 <body>
 
-  <my-app>Loading...</my-app>
+  <my-app>
+      <i class="fa fa-circle-o-notch"></i> 
+  </my-app>
 
   <script>
+    // initialize the auth2 and gapi object tp make them available in components
+
     var auth2; // The Sign-In object.
 
     var initSigninV2 = function() {
@@ -37,10 +44,13 @@
       });
     }
 
-    // initialize the auth2 object
     gapi.load('auth2', initSigninV2);
   </script>
 
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

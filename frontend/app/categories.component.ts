@@ -31,7 +31,7 @@ export class CategoriesComponent implements OnInit {
   onSelect(category: Category) {
     // When a user clicks on a category, it is highlighted
     if (this.selectedCategory === category) {
-      this.selectedCategory = null;
+      this.selectedCategory = undefined;
     } else {
       this.selectedCategory = category;
     }

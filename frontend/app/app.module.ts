@@ -7,7 +7,6 @@ import { HttpModule }    from '@angular/http';
 import { AppComponent }            from './app.component';
 
 import { CategoriesComponent }     from './categories.component';
-import { CategoryDetailComponent } from './category-detail.component';
 
 import { ItemsComponent }     from './items.component';
 import { ItemFormComponent }     from './item-form.component';
@@ -29,7 +28,6 @@ import { AuthService } from './auth.service';
   declarations: [
     AppComponent,
     CategoriesComponent,
-    CategoryDetailComponent,
     ItemFormComponent,
     ItemsComponent,
     LoginComponent
