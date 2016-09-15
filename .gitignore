@@ -35,8 +35,7 @@ typings/
 # typescript #
 ######################
 *.map
-*.js
-
+frontend/app/*.js
 # db #
 ######################
 **.sqlite3
