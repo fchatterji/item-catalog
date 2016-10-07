@@ -1,6 +1,6 @@
 # item-catalog
 
-A catalog of categories and items, developped with angular2 and django.
+A catalog of categories and items, built using django and django-rest-framework for the backend, and angular2 for the frontend.
 
 ## Description
 
