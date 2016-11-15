@@ -1,54 +1,54 @@
 <html>
 
 <head>
-  <base href="/">
-  <title>Item catalog</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-signin-client_id" content="775273345656-l41qk7gdvhovlh5mdrvnhfa3hdrtf2ef.apps.googleusercontent.com">
-  <!-- Bootstrap -->
-  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-  <!-- 1. Load libraries -->
-  <!-- Polyfill(s) for older browsers -->
-  <script src="node_modules/core-js/client/shim.min.js"></script>
-  <script src="node_modules/zone.js/dist/zone.js"></script>
-  <script src="node_modules/reflect-metadata/Reflect.js"></script>
-  <script src="node_modules/systemjs/dist/system.src.js"></script>
-  <!-- 2. Configure SystemJS -->
-  <script src="systemjs.config.js"></script>
-  <script>
-    System.import('app').catch(function(err) {
-      console.error(err);
-    });
-  </script>
-  <script src="https://apis.google.com/js/platform.js"></script>
+    <base href="/">
+    <title>Item catalog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="143393139218-ria0ldsgj06iare6d3go0b1ppf1i2qoj.apps.googleusercontent.com">
+    <!-- Bootstrap -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function(err) {
+            console.error(err);
+        });
+
+    </script>
+    <script src="https://apis.google.com/js/platform.js"></script>
 </head>
 
 <body>
 
-  <my-app>...loading</my-app>
+    <my-app>...loading</my-app>
 
-  <script>
-    // initialize the auth2 and gapi object tp make them available in components
+    <script>
+        // initialize the auth2 and gapi object tp make them available in components
+        var auth2; // The Sign-In object.
+        var initSigninV2 = function() {
+            auth2 = gapi.auth2.init({
+                client_id: '143393139218-ria0ldsgj06iare6d3go0b1ppf1i2qoj.apps.googleusercontent.com',
+                scope: 'profile'
+            });
+        }
+        gapi.load('auth2', initSigninV2);
 
-    var auth2; // The Sign-In object.
+    </script>
 
-    var initSigninV2 = function() {
-      auth2 = gapi.auth2.init({
-        client_id: '775273345656-l41qk7gdvhovlh5mdrvnhfa3hdrtf2ef.apps.googleusercontent.com',
-        scope: 'profile'
-      });
-    }
-
-    gapi.load('auth2', initSigninV2);
-  </script>
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
+
